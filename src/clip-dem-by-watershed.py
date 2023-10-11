@@ -20,8 +20,12 @@ def main():
                 VRT,
                 cutlineDSName = tmp_gpkg,
                 cropToCutline = True,
+                xRes = 20,
+                yRes = 20,
                 callback=gdal.TermProgress_nocb
             )
+            os.remove(tmp_gpkg)
+            
 
 if __name__ in "__main__":
     DEM_DIR = "data/nztm/raster/dem_clip_nztm"
