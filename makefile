@@ -14,10 +14,16 @@ RUN ?= docker run -it --rm --net=host --user=$$(id -u):$$(id -g) \
 
 ##### CATCHMENTS #####
 watershed-clip:
-	$(RUN) python3 src/clip-dem-by-watershed.py
+	$(RUN) python3 src/clip-by-watershed.py
+
+merges:
+	$(RUN) python3 src/merge-vectors.py
+
+burn-poly:
+	$(RUN) bash src/burn-polys.sh $(tif)
 
 rivers:
-	$(RUN) bash src/grass-build-rivers.sh
+	$(RUN) bash src/grass-build-rivers.sh $(tif)
 
 ##### DOCKER #####
 test-local: docker/Dockerfile

@@ -16,6 +16,7 @@ grass/*
 **/.DS_Store
 .dbus*
 .grass7
+.grass8
 .subversion
 
 # History and AWS

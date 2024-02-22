@@ -31,4 +31,6 @@ RUN pip3 install boto3 geopandas rasterio --upgrade --force-reinstall
 RUN pip3 install koordinates
 RUN pip3 install awscli 
 
-RUN apt-get update && apt-get -y install grass-core grass-dev
+RUN apt update && apt -y install grass-core grass-dev
+
+RUN apt -y install jq
